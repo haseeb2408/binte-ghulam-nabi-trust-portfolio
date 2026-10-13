@@ -9,7 +9,11 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-forest/10 bg-sand/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <a href="#top" className="font-serif text-lg font-semibold text-forest sm:text-xl">
+        <a href="#top" className="flex items-center gap-3 font-serif text-lg font-semibold text-forest sm:text-xl">
+          {site.logo && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={site.logo} alt={`${site.name} logo`} className="h-12 w-auto object-contain" />
+          )}
           {site.name}
         </a>
 

@@ -9,6 +9,9 @@
  */
 
 export const site = {
+  // Put your logo in /public (e.g. public/logo.png) and set "/logo.png".
+  // Leave "" to show the name only.
+  logo: "/logo.png",
   name: "Binte Ghulam Nabi Trust",
   shortName: "BGN Trust",
   tagline: "Serving people with compassion, dignity and care.",
@@ -85,6 +88,29 @@ export const programs = [
 // An empty list hides the Impact numbers.
 export const stats: { value: string; label: string }[] = [];
 
-// Add photos to /public/gallery and list them like
-// { src: "/gallery/ration-drive.jpg", alt: "Ration distribution drive" }.
-export const gallery: { src: string; alt: string }[] = [];
+export type Activity = {
+  id: string;
+  title: string;
+  date?: string;
+  description?: string;
+  photos: string[];
+  videos: { file: string; title?: string; poster?: string }[];
+};
+
+export const activities: Activity[] = [
+  {
+    id: "orphanage-visit",
+    title: "Orphanage Visit",
+    date: "October 2026",
+    description: "A day spent with the children, with gifts, food and time together.",
+    photos: ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg"],
+    videos: [{ file: "visit.mp4", title: "Visit highlights" }],
+  },
+  {
+    id: "dastarkhan",
+    title: "Dastarkhan",
+    description: "Meals served to families in need.",
+    photos: ["1.jpeg", "2.jpeg" , "3.jpeg" , "4.jpeg" , "5.jpeg"],
+    videos: [{ file: "1.mp4", title: "Serving food" }],
+  },
+];
