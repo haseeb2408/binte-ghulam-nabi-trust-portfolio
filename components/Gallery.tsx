@@ -2,17 +2,26 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { activities, site } from "@/lib/content";
-import { FacebookIcon, InstagramIcon } from "./Icons";
+import { socialList } from "./SocialLinks";
 
 function SocialButtons({ label }: { label: string }) {
   return (
-    <div className="mt-8 flex flex-wrap gap-4">
-      <a href={site.socials.instagram} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-forest px-6 py-3 font-semibold text-sand transition hover:bg-forest-dark">
-        <InstagramIcon className="h-5 w-5" /> {label} Instagram
-      </a>
-      <a href={site.socials.facebook} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-forest px-6 py-3 font-semibold text-forest transition hover:bg-forest/10">
-        <FacebookIcon className="h-5 w-5" /> {label} Facebook
-      </a>
+    <div className="mt-8 flex flex-wrap gap-3">
+      {socialList.map(({ label: name, href, Icon }, i) => (
+        <a
+          key={name}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`inline-flex items-center gap-2 rounded-full px-5 py-3 font-semibold transition ${
+            i === 0
+              ? "bg-forest text-sand hover:bg-forest-dark"
+              : "border border-forest text-forest hover:bg-forest/10"
+          }`}
+        >
+          <Icon className="h-5 w-5" /> {label} {name}
+        </a>
+      ))}
     </div>
   );
 }

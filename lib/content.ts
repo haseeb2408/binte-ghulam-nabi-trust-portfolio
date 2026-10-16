@@ -20,21 +20,24 @@ export const site = {
   socials: {
     instagram: "https://www.instagram.com/binte_ghulam_nabi_trust",
     facebook: "https://www.facebook.com/share/1VyMW9VdBE/?mibextid=wwXIfr",
+    youtube: "https://youtube.com/@binteghulamnabitrust",
+    tiktok: "https://www.tiktok.com/@binteghulamnabitrust",
   },
   // Leave a field as "" to hide it on the site.
   contact: {
     email: "",
-    phone: "",
+    phone: "+92 328 4073349",
     whatsapp: "",
     address: "",
   },
   // Add bank / mobile-wallet details to show them in the Donate section.
-  donation: {
-    accountTitle: "",
-    bankName: "",
-    accountNumber: "",
-    iban: "",
-    easypaisaJazzcash: "",
+    donation: {
+    easypaisaJazzcash: "0304 4239707",
+    accountTitle: "SUMAIRA",
+    bankName: "Meezan Bank",
+    branch: "Canal Road, Mughalpura, Lahore",
+    accountNumber: "02350103907163",
+    iban: "PK90MEZN0002350103907163",
   },
 };
 
@@ -114,3 +117,9 @@ export const activities: Activity[] = [
     videos: [{ file: "1.mp4", title: "Serving food" }],
   },
 ];
+
+
+export const leaders: { name: string; role: string; photo: string }[] = [
+    { name: "", role: "Chairperson & Founder", photo: "/founder.jpg" },
+  ];
+export const leaderMessage = "Just a little effort to save and serve HUMANITY";
